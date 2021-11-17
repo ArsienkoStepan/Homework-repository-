@@ -1,0 +1,109 @@
+@keyframes sliding {
+   0% {
+        background: blue;
+        left: 0;
+        top: 0;
+
+   } 
+   25% {
+        background: green;
+        left: 0;
+        top: calc(100% - 100px);
+
+   }
+   50% {
+       background: green;
+        top: calc(100% - 100px);
+        left: calc(100% - 100px);
+   }
+   75% {
+       background: yellow;
+       left: calc(100% - 100px);
+        top: 0;
+   }
+   100% {
+       background: red;
+       top: 0;
+       left: 0;
+
+   }
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    position: relative;    
+}
+.animation {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sliding 5s infinite;
+}
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+
+}
+.header {
+    position: absolute;
+    top: 0;
+    left: -170px;
+    bottom: 0;
+    background: #808080;
+    width: 200px;
+    padding: 30px 20px;
+    z-index: 2;
+}
+.header:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(50%, -50%) rotate(90deg);
+    text-transform: uppercase;
+    color: #fff;
+}
+.header:hover {
+    left: 0;
+    transition: left .3s ease-in;
+}
+.header:hover:after {
+    opacity: 0;
+    visibility: visible;
+    transition: opacity .3s ease-in;
+}
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+.nav-item {
+    position: relative;
+    padding-left: 20px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.nav-item:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border: 1px solid #000;
+    transform: rotate(45deg) skew(5deg);
+}
+.nav-item a {
+    color: white;
+    text-decoration: none;
+}
+.nav-item a:hover {
+    transition: color .3s ease-in;
+    color: yellow;
+}

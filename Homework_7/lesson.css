@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,100&display=swap');
+.roboto {
+    font-family: 'Roboto';
+}
+.icons {
+    list-style: none;
+}
+.item::before {
+    content: "\f09a";
+}

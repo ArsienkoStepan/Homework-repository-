@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+@keyframes square {
+    0% {
+        background: red;
+        left: 0;
+        top: 0;
+    }
+    25% {
+        top: calc(100% - 100px);
+        left: 0;
+        background: blue;
+    }
+    50% {
+        top: calc(100% - 100px);
+        left: calc(100% - 100px);
+        background: green;
+    }
+    75% {
+        left: calc(100% - 100px);
+        top: 0;
+        background: yellow;
+    }
+    100% {
+        left: 0;
+        top: 0;
+        background: red;
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+/* Первый уровень(“карты”) */
+.parent {
+    width: 50%;
+    height: 600px;
+    background: #0d5825;
+    position: relative;
+}
+.cite {
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+    color: white;
+    position: absolute;
+}
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.rotate-three {
+    transform: rotate(7deg);
+    transition: .5s ease-in;
+}
+.rotate-three:hover {
+    transform: rotate(7deg) translateY(-20px);
+}
+.rotate-two {
+    transform: rotate(-7deg);
+    left: 41%;
+    top: 48%;
+    transition: .5s ease-in;
+}
+.rotate-two:hover {
+    transform: rotate(-7deg) translateY(-20px);
+}
+
+.rotate-one {
+    left: 33%;
+    top: 46%;
+    transform: rotate(-20deg);
+    transition: .5s ease-in;
+}
+.rotate-one:hover {
+    transform: rotate(-20deg) translateY(-20px);
+}
+/*  Второй уровень(“усложняемся”) */
+.level_2 {
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+}
+.element-one {
+    width: 120px;
+    height: 120px;
+    background: rgb(241, 145, 161);
+    position: absolute;
+}
+.element-two {
+    width: 120px;
+    height: 120px;
+    background: rgb(114, 114, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.element-three {
+    width: 120px;
+    height: 120px;
+    background: rgb(106, 233, 106);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+/* Третий уровень (“выезжающее меню”) */
+.aside {
+    position: absolute;
+    margin-top: 20px;
+    height: 100vh;
+    width: 20%;
+    background: rgb(173, 173, 173);
+    left: -235px;
+    transition: 1s ease-in; 
+}
+.aside:after {
+    content: attr(data-text);
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    right: 20px;
+    transform: translate(50%, -50%) rotate(90deg);
+    color: white;
+}
+.aside:hover {
+    left: 0;
+}
+.aside:hover:after {
+    opacity: 0;
+    transition: 1.5s ease-in;
+}
+.menu-list {
+    margin-left: 20px;
+    padding: 20px;
+    line-height: 1.5;
+    position: relative;
+    text-transform: uppercase;
+    list-style: none;
+    color: white;
+}
+.item a {
+    color: white;
+    text-decoration: none;
+    transition: .5s ease-in;
+}
+.item a:hover {
+    color: yellow;
+}
+.item:before {
+    margin-top: 7px;
+    position: absolute;
+    left: 5px;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border: 1px solid black;
+    transform: rotate(45deg);
+}
+/* Кто совсем молодец ("по желанию") */
+.animation {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    margin-top: 20px;
+    right: 200px;
+}
+.multicolor {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: red;
+    animation: square 3s ease-in infinite;
+}
+

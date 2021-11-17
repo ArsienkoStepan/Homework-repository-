@@ -1,0 +1,45 @@
+/* Первый уровень */
+blockquote p {
+    color: green;
+}
+/* Второй уровень */
+.list a[href^="https://"] {
+    color: red;
+}
+.last-link {
+    background-color: green;
+}
+ul ~ p {
+    font-size: 26px;
+}
+/* Второй уровень (“работаю с css-ом”) */
+.text-box h3:first-child {
+    color: pink;
+}
+#greycol {
+    color: grey;
+}
+div p:first-child {
+    color: red;
+}
+div p:nth-last-child(2) {
+    color: green;
+}
+.yellow {
+    color: yellow;
+}
+/* Кто совсем молодец ("по желанию") */
+.bg-box {
+    width: 600px;
+    height: 300px;
+    background-color: green;
+    background-image: url(https://www.freeiconspng.com/uploads/lamp-png-0.png), 
+                      url(https://www.freeiconspng.com/uploads/grass-png-images-pictures-transparent-28.png),
+                      url(https://vignette.wikia.nocookie.net/mashaandthebear/images/e/e0/%D0%81%D0%B6%D0%B8%D0%BA.png/revision/latest?cb=20180209130328&path-prefix=ru),
+                      url(../ponchik-removebg-preview.png),
+                      url(https://img2.goodfon.ru/wallpaper/big/0/5b/pole-zelen-trava-dom-derevya.jpg);
+    background-position: left top, left bottom, left top, right top, center center;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y, no-repeat;
+    background-size: 25px 35px, 50px 60px, 20px 20px, 20px 20px, 250px 150px;
+    
+}

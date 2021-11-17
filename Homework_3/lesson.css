@@ -1,0 +1,27 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.777;
+    color: grey;
+}
+.wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+.box {
+    
+}
